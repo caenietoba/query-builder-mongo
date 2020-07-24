@@ -1,0 +1,28 @@
+{
+  "name": "query-builder-mongo",
+  "version": "0.0.1",
+  "description": "Builder to create pipelines for the aggregate method in mongo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caenietoba/query-builder-mongo.git"
+  },
+  "keywords": [
+    "mongo",
+    "query",
+    "builder",
+    "mongo",
+    "aggregate",
+    "pipeline",
+    "mongo"
+  ],
+  "author": "Camilo Esteban Nieto Barrera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caenietoba/query-builder-mongo/issues"
+  },
+  "homepage": "https://github.com/caenietoba/query-builder-mongo#readme"
+}
