@@ -4,7 +4,7 @@
   "description": "Builder to create pipelines for the aggregate method in mongo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./tests"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/caenietoba/query-builder-mongo/issues"
   },
-  "homepage": "https://github.com/caenietoba/query-builder-mongo#readme"
+  "homepage": "https://github.com/caenietoba/query-builder-mongo#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1"
+  }
 }
