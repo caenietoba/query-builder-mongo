@@ -33,19 +33,6 @@ class QueryBuilder extends Array {
   }
 
   /**
-   * Add a single or multiple stages to the query builder, and persist them in the stages over the path.
-   * It will override the stage in the path if the path already is in use.
-   * @param {String} path Path that will has the stage or stages.
-   * @param {[Object]|Object} stages Stages that will be added to the query builder and persisted on the stages.
-   * @returns {QueryBuilder} The query builder with the stage or stages added.
-   */
-  addStagesAndPersistInStore(path, stages) {
-    this.addStages(stages);
-    createStageInStore(path, stages);
-    return this;
-  }
-
-  /**
    * Get a stage in the stages Store with the path passed as parameter and added to the query builder,
    * in case that the path is not found it will throw and error.
    * @param {String} path Path that will be searched in the stages Store.
