@@ -1,9 +1,15 @@
 const QueryBuilder = require("./src/queryBuilder");
-const { clearStages, createStage, getStages } = require("./src/stages");
+const {
+  clearStagesStore,
+  createStageInStore,
+  getStageInStore,
+  getStagesStore,
+} = require("./src/stages");
 
 module.exports = {
   QueryBuilder,
-  createStage,
-  getStages,
-  clearStages,
+  clearStagesStore,
+  createStageInStore,
+  getStageInStore,
+  getStagesStore,
 };

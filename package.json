@@ -4,7 +4,7 @@
   "description": "Builder to create pipelines for the aggregate method in mongo",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./tests"
+    "test": "mocha ./src/tests"
   },
   "repository": {
     "type": "git",

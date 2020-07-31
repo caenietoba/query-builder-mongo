@@ -1,4 +1,4 @@
-const { createStage, getStage, getStages, printStages } = require("./stages");
+const { createStageInStore, getStageInStore } = require("./stages");
 const { validateStage } = require("./helpers/validations");
 const { transformToArray } = require("./helpers/transformations");
 
@@ -39,9 +39,9 @@ class QueryBuilder extends Array {
    * @param {[Object]|Object} stages Stages that will be added to the query builder and persisted on the stages.
    * @returns {QueryBuilder} The query builder with the stage or stages added.
    */
-  addStagesAndPersist(path, stages) {
+  addStagesAndPersistInStore(path, stages) {
     this.addStages(stages);
-    createStage(path, stages);
+    createStageInStore(path, stages);
     return this;
   }
 
@@ -53,7 +53,7 @@ class QueryBuilder extends Array {
    * @throws {Error} If the path is not found.
    */
   getStage(path) {
-    this.addStages(getStage(path));
+    this.addStages(getStageInStore(path));
     return this;
   }
 }
