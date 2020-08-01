@@ -5,10 +5,8 @@
  * an array in the position 0.
  */
 const transformToArray = (stage) => {
-  let stages = null;
-  if (stage instanceof Array) stages = stage;
-  else stages = [stage];
-  return stages;
+  if (stage) return stage instanceof Array ? stage : [stage];
+  return stage;
 };
 
 module.exports = { transformToArray };

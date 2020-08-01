@@ -1,46 +1,35 @@
 const { expect } = require("chai");
-const { validateIsArray, validateStage, isPlainObject } = require("../helper");
+const { isPlainObject, validateStage } = require("../../helpers/validations");
+const {
+  errorMessages: { notPlainObject, notMongoStage },
+} = require("../../helpers/messages");
 
-describe("helpers", () => {
-  describe("validateIsArray", () => {
-    it("throws error", () => {
-      expect(() => {
-        validateIsArray("");
-      }).to.throw(Error, "An array must be passed");
-    });
-
-    it("Is an array", () => {
-      expect(() => {
-        validateIsArray([]);
-      }).not.to.Throw(Error);
-    });
-  });
-
-  describe("validateStage", () => {
+describe("Validations helper", () => {
+  describe("Method: validateStage", () => {
     it("Not plain object", () => {
       expect(() => {
         validateStage("");
-      }).to.throw(Error, `Stage must be a js plain object`);
+      }).to.throw(Error, notPlainObject);
     });
 
     it("Plain object with a number of keys different to 1", () => {
       expect(() => {
         validateStage({});
-      }).to.throw(Error, `Stage must be a js plain object`);
+      }).to.throw(Error, notMongoStage);
 
       expect(() => {
         validateStage({ field1: "", field2: "" });
-      }).to.throw(Error, `Stage must be a js plain object`);
+      }).to.throw(Error, notMongoStage);
     });
 
-    it("Good object", () => {
+    it("Is valid stage", () => {
       expect(() => {
         validateStage({ $match: { _id: "" } });
       }).not.to.Throw(Error);
     });
   });
 
-  describe("isPlainObject", () => {
+  describe("Method: isPlainObject", () => {
     it("Is plain object", () => {
       expect(isPlainObject({})).to.be.true;
     });
